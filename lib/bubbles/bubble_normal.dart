@@ -40,6 +40,7 @@ class BubbleNormal extends StatelessWidget {
   final bool sent;
   final bool delivered;
   final bool seen;
+  final String timOfSent;
   final TextStyle textStyle;
   final BoxConstraints? constraints;
   final Widget? leading;
@@ -53,6 +54,7 @@ class BubbleNormal extends StatelessWidget {
   BubbleNormal({
     Key? key,
     required this.text,
+    required this.timOfSent,
     this.constraints,
     this.margin = EdgeInsets.zero,
     this.padding = const EdgeInsets.symmetric(horizontal: 16, vertical: 2),
@@ -79,6 +81,7 @@ class BubbleNormal extends StatelessWidget {
   Widget build(BuildContext context) {
     bool stateTick = false;
     Icon? stateIcon;
+    Text? sentTime;
     if (sent) {
       stateTick = true;
       stateIcon = Icon(
@@ -103,6 +106,12 @@ class BubbleNormal extends StatelessWidget {
         color: Color(0xFF92DEDA),
       );
     }
+
+    sentTime = Text(
+      timOfSent,
+      style: textStyle,
+      textAlign: TextAlign.left,
+    );
 
     return Row(
       children: <Widget>[
@@ -157,7 +166,7 @@ class BubbleNormal extends StatelessWidget {
                       ? Positioned(
                           bottom: 4,
                           right: 6,
-                          child: stateIcon,
+                          child: sentTime,
                         )
                       : SizedBox(
                           width: 1,

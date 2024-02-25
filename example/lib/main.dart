@@ -72,14 +72,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   textStyle: TextStyle(
                     fontSize: 20,
                     color: Colors.white,
-                  ),
+                  ), timOfSent: '',
                 ),
                 BubbleNormal(
                   text: 'bubble normal with tail',
                   isSender: true,
                   color: Color(0xFFE8E8EE),
                   tail: true,
-                  sent: true,
+                  sent: true, timOfSent: '',
                 ),
                 DateChip(
                   date: new DateTime(now.year, now.month, now.day - 2),
@@ -92,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   textStyle: TextStyle(
                     fontSize: 20,
                     color: Colors.white,
-                  ),
+                  ), timOfSent: '',
                 ),
                 BubbleNormal(
                   text: 'bubble normal without tail',
@@ -100,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   tail: false,
                   sent: true,
                   seen: true,
-                  delivered: true,
+                  delivered: true, timOfSent: '',
                 ),
                 BubbleSpecialOne(
                   text: 'bubble special one with tail',
