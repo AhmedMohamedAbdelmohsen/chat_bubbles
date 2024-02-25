@@ -15,13 +15,17 @@ class DateChipText {
   ///
   ///
   String getText() {
-    final now = new DateTime.now();
+    final now = DateTime.now();
+    final fiveDaysAgo = now.subtract(Duration(days: 5));
+
     if (_formatter.format(now) == _formatter.format(date)) {
       return 'Today';
-    } else if (_formatter
-            .format(new DateTime(now.year, now.month, now.day - 1)) ==
+    } else if (_formatter.format(now.subtract(Duration(days: 1))) ==
         _formatter.format(date)) {
       return 'Yesterday';
+    } else if (date.isAfter(fiveDaysAgo)) {
+      // If the date is within the last 5 days, return the name of the day
+      return DateFormat('EEEE').format(date);
     } else {
       return '${DateFormat('d').format(date)} ${DateFormat('MMMM').format(date)} ${DateFormat('y').format(date)}';
     }
