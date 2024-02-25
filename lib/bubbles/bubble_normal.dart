@@ -150,7 +150,8 @@ class BubbleNormal extends StatelessWidget {
                       : BUBBLE_RADIUS),
                 ),
               ),
-              child: Stack(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Padding(
                     padding: stateTick
@@ -162,15 +163,14 @@ class BubbleNormal extends StatelessWidget {
                       textAlign: TextAlign.left,
                     ),
                   ),
-                  stateIcon != null && stateTick
-                      ? Positioned(
-                          bottom: 4,
-                          right: 6,
-                          child: sentTime,
-                        )
-                      : SizedBox(
-                          width: 1,
-                        ),
+                  SizedBox(height: 1),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 8.0, bottom: 8.0),
+                      child: sentTime, // Place your sentTime widget here
+                    ),
+                  ),
                 ],
               ),
             ),
