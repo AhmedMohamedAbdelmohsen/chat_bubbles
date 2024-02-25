@@ -82,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   sent: true, timOfSent: '',
                 ),
                 DateChip(
-                  date: new DateTime(now.year, now.month, now.day - 2),
+                  date: new DateTime(now.year, now.month, now.day - 2), style: TextStyle(),
                 ),
                 BubbleNormal(
                   text: 'bubble normal without tail',
@@ -112,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 DateChip(
-                  date: new DateTime(now.year, now.month, now.day - 1),
+                  date: new DateTime(now.year, now.month, now.day - 1), style: TextStyle(),
                 ),
                 BubbleSpecialOne(
                   text: 'bubble special one with tail',
@@ -145,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 DateChip(
-                  date: now,
+                  date: now,style: TextStyle(),
                 ),
                 BubbleSpecialTwo(
                   text: 'bubble special tow with tail',
